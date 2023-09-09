@@ -2,8 +2,10 @@ package com.devs.springproject.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +24,8 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 	
-	//List<Product> products = new ArrayList<>();
+	
+	//Set<Product> products = new HashSet<>();
 	
 	public Category() {
 		
@@ -51,11 +54,10 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 	/*
-	public List<Product> getList() {
+	public Set<Product> getProducts() {
 		return products;
 	}
 	*/
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -72,6 +74,12 @@ public class Category implements Serializable {
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
+	
+
+
+	
 
 
 	
