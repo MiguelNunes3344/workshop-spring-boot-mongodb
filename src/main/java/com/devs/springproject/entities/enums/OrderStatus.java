@@ -1,4 +1,4 @@
-package com.devs.springproject.entities;
+package com.devs.springproject.entities.enums;
 
 public enum OrderStatus {
 	WAITING_PAYMENT(1),
