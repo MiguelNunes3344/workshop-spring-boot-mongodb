@@ -10,7 +10,9 @@ import org.springframework.context.annotation.Configuration;
 
 import com.devs.springproject.entities.Category;
 import com.devs.springproject.repositories.CategoryRepository;
+import com.devs.springproject.repositories.OrderItemRepository;
 import com.devs.springproject.entities.Order;
+import com.devs.springproject.entities.OrderItem;
 import com.devs.springproject.entities.Product;
 import com.devs.springproject.entities.User;
 import com.devs.springproject.entities.enums.OrderStatus;
@@ -33,6 +35,9 @@ public class TestConfig implements CommandLineRunner{
 	@Autowired
 	private ProductRepository productRepository;
 	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		User u1 = new User(null, "Anna Montana", "maria@gmail.com", "988888888", "123456"); 
@@ -47,8 +52,9 @@ public class TestConfig implements CommandLineRunner{
 		
 		Category c1 = new Category(null,"Eletronics");
 		Category c2 = new Category(null,"Foods");
+		Category c3 = new Category(null,"Books");
 		
-		categoryRepository.saveAll(Arrays.asList(c1,c2));
+		categoryRepository.saveAll(Arrays.asList(c1,c2,c3));
 		
 		
 		
@@ -60,10 +66,22 @@ public class TestConfig implements CommandLineRunner{
 		
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 		
-		p1.getCategories().add(c2);
-		p1.getCategories().add(c1);
+		p1.getCategories().add(c3);
+		p2.getCategories().add(c1);
+		p3.getCategories().add(c1);
+		p4.getCategories().add(c1);
+		p5.getCategories().add(c3);
 		
-		productRepository.saveAll(Arrays.asList(p1,p2));
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice()); 
+		OrderItem oi2 = new OrderItem(o1, p2, 1, p2.getPrice()); 
+		OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice()); 
+		OrderItem oi4 = new OrderItem(o2, p4, 2, p4.getPrice()); 
+		OrderItem oi5 = new OrderItem(o2, p5, 2, p5.getPrice()); 
+		
+		
+		orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4,oi5));
 
 		
 	} 
