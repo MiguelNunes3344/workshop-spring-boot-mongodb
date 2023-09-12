@@ -12,8 +12,6 @@ Spring Boot
 
 Spring Data JPA
 H2 Database
-Thymeleaf (or your chosen frontend framework)
-Bootstrap (for UI)
 Maven (for dependency management)
 
 
