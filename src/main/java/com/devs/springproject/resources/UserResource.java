@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devs.springproject.entities.User;
@@ -55,6 +56,11 @@ public class UserResource {
 	public ResponseEntity<Object> delete(@PathVariable(value = "id")Long id){
 		userService.delete(id);
 		return ResponseEntity.noContent().build();
+	}
+	@GetMapping(value = "/index")
+	public ModelAndView index() {
+		var m = new ModelAndView("index");
+		return m;
 	}
  	
 }
