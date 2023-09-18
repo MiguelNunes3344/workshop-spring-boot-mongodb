@@ -9,11 +9,19 @@
 		<version>3.1.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 	<groupId>com.devs</groupId>
 	<artifactId>springproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springproject</name>
 	<description>Demo project for Spring Boot</description>
+=======
+	<groupId>com.projectmongo</groupId>
+	<artifactId>workshopmongo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>workshopmongo</name>
+	<description>Spring Boot backend</description>
+>>>>>>> e3ee7910c00322460af896484d104d94b3933dc6
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -30,6 +38,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
@@ -41,6 +50,10 @@
       		 <groupId>org.springframework.boot</groupId>
      		 <artifactId>spring-boot-starter-security</artifactId>
     	</dependency>
+=======
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+>>>>>>> e3ee7910c00322460af896484d104d94b3933dc6
 	</dependencies>
 
 	<build>
